@@ -6,7 +6,7 @@ abstract class BaseParser {
 
 Map<String, BaseParser> _parsers = <String, BaseParser>{};
 
-void pushParser(String typeName, BaseParser parser) => _parsers.putIfAbsent(typeName, () => parser);
+void pushParser(Type type, BaseParser parser) => _parsers.putIfAbsent(type.toString(), () => parser);
 
 extension Cast on String {
   T cast<T>() {

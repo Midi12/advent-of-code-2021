@@ -25,7 +25,7 @@ class DirectionInputParser implements BaseParser {
 DirectionInputParser parser = DirectionInputParser();
 
 main() {
-  pushParser('DirectionInput', parser);
+  pushParser(DirectionInput, parser);
 
   String path = 'input.txt';
   List<DirectionInput> inputs = parseInputFile<DirectionInput>(path);

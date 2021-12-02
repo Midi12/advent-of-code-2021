@@ -8,7 +8,7 @@ class IntParser implements BaseParser {
 IntParser parser = IntParser();
 
 main() {
-  pushParser('int', parser);
+  pushParser(int, parser);
 
   String path = 'input.txt';
   List<int> depths = parseInputFile<int>(path);
