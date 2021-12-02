@@ -1,11 +1,17 @@
-import 'dart:io';
-import 'dart:convert';
+import '../base.dart';
+
+class IntParser implements BaseParser {
+  @override
+  T cast<T>(String value) => int.parse(value) as T;
+}
+
+IntParser parser = IntParser();
 
 main() {
-  String path = 'input.txt';
+  pushParser('int', parser);
 
-  List<int> depths = File(path).readAsLinesSync()
-    .map((line) => int.parse(line)).toList();
+  String path = 'input.txt';
+  List<int> depths = parseInputFile<int>(path);
 
   int answer = 0;
   int? lastDepth = null;
