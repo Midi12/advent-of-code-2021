@@ -17,7 +17,7 @@ class DirectionInputParser implements BaseParser {
   @override
   T cast<T>(String value) {
     List<String> data = value.split(' ');
-    return DirectionInput(enumFromString(Direction.values, data[0])!, int.parse(data[1])) as T;
+    return DirectionInput(enumFromString(Direction.values, data[0]), int.parse(data[1])) as T;
   }
 
 }
