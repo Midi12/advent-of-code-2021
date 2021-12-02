@@ -22,6 +22,6 @@ extension Cast on String {
 List<T> parseInputFile<T>(String path) => File(path).readAsLinesSync()
     .map((line) => line.cast<T>()).toList();
 
-T? enumFromString<T>(Iterable<T> values, String value) {
+T enumFromString<T>(Iterable<T> values, String value) {
   return values.firstWhere((type) => type.toString().split(".").last == value);
 }
