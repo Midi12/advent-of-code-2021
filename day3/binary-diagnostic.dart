@@ -55,8 +55,8 @@ main() {
   for (int i = 0; i < columns.length; i++) {
     // since we work with bits we can use addition to find the most common bit
     int sum = columns[i].reduce((a, b) => a + b);
-    mostCommonBits.add(sum > columns[i].length / 2 ? 1 : 0);
-    mostCommonBitsInverted.add(sum < columns[i].length / 2 ? 1 : 0);
+    mostCommonBits.add(sum * 2 > columns[i].length ? 1 : 0);
+    mostCommonBitsInverted.add(sum * 2 < columns[i].length ? 1 : 0);
   }
 
   int gamma = mostCommonBits.toDecimal();
@@ -78,7 +78,6 @@ main() {
     }
   }
 
-  print(o2Candidates.length);
   int o2rating = o2Candidates[0].toDecimal();
 
   List<List<int>> co2Candidates = new List<List<int>>.from(rows);
@@ -89,7 +88,6 @@ main() {
     }
   }
 
-  print(co2Candidates.length);
   int co2rating = co2Candidates[0].toDecimal();
 
   print('Part Two answer ? ${o2rating * co2rating}');
